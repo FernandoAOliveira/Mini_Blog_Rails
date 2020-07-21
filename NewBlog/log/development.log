@@ -2074,3 +2074,105 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 131ms (Views: 115.8ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/categories" for ::1 at 2020-07-21 08:49:09 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fao/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 276ms (Views: 267.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-21 08:49:10 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-21 08:49:11 -0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (137.2ms)
+  Rendered categories/new.html.erb within layouts/application (146.8ms)
+Completed 200 OK in 215ms (Views: 191.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-07-21 08:49:17 -0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:68
+Completed 500 Internal Server Error in 82114ms (ActiveRecord: 1.1ms)
+
+
+  
+SystemExit (exit):
+Started GET "/categories/1" for ::1 at 2020-07-21 08:50:39 -0300
+  
+(byebug):1:in `exit'
+(byebug):1:in `show'
+app/controllers/categories_controller.rb:14:in `show'
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (9.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:68
+Completed 500 Internal Server Error in 83298ms (ActiveRecord: 9.1ms)
+
+
+  
+Started GET "/" for ::1 at 2020-07-21 08:52:03 -0300
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `show'
+app/controllers/categories_controller.rb:14:in `show'
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 605ms (Views: 588.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/categories" for ::1 at 2020-07-21 08:52:15 -0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (5.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:15
+  Rendered categories/index.html.erb within layouts/application (146.3ms)
+Completed 200 OK in 809ms (Views: 768.3ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/categories/1" for ::1 at 2020-07-21 08:52:16 -0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (2.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 693ms (Views: 608.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/categories/new" for ::1 at 2020-07-21 08:53:18 -0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (65.9ms)
+  Rendered categories/new.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 837ms (Views: 662.8ms | ActiveRecord: 19.6ms)
+
+
+Started POST "/categories" for ::1 at 2020-07-21 08:53:57 -0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7WiX+AzD/68EsoDzp1eVnm+4a6pooGUDx5czgxvc/75sWT7+/LBKhOr2n3NTm0mD6wPy006wq7BjPBoYjnktBA==", "category"=>{"name"=>"byebug create", "description"=>"testando byebug create"}, "commit"=>"Create Category"}
+Completed 500 Internal Server Error in 159418ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/categories_controller.rb:28:in `create'
