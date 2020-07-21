@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
+  get 'contacts/show'
+  get 'contacts/new'
+  get 'contacts/create'
+  get 'contacts/edit'
+  get 'contacts/update'
+  get 'contacts/destroy'
   root 'pages#home'
   resources :categories
   devise_for :users
